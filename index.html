@@ -1,1 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morph Image Effect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="controls">
+            <input type="url" id="imageUrl" placeholder="Вставь URL изображения" value="https://picsum.photos/300/300">
+            <select id="shapeSelect">
+                <option value="circle">Круг</option>
+                <option value="heart">Сердце</option>
+                <option value="star">Звезда</option>
+                <option value="triangle">Треугольник</option>
+                <option value="hexagon">Шестиугольник</option>
+            </select>
+            <button id="morphBtn">Морфинг</button>
+            <button id="resetBtn">Сброс</button>
+        </div>
+        
+        <div class="morph-container">
+            <svg id="morphSvg" width="300" height="300" viewBox="0 0 300 300">
+                <defs>
+                    <clipPath id="morphClip">
+                        <rect x="0" y="0" width="300" height="300" />
+                    </clipPath>
+                </defs>
+                <image id="morphImage" x="0" y="0" width="300" height="300" clip-path="url(#morphClip)" />
+                <path id="morphPath" fill="none" stroke="none" />
+            </svg>
+        </div>
+    </div>
 
+    <script src="script.js"></script>
+    <script src="morph-effect.js"></script>
+</body>
+</html>
